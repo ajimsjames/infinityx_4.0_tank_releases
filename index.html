@@ -650,7 +650,7 @@
         <div class="feature-card fade-up">
           <div class="feature-icon">🔒</div>
           <div class="feature-title">SELinux Enforcing</div>
-          <div class="feature-desc">Hardened security architecture built on modern upstream Linux kernel patches and full userdebug stability.</div>
+          <div class="feature-desc">Hardened security architecture built on modern upstream Linux kernel patches with full user build stability.</div>
         </div>
       </div>
     </section>
@@ -756,19 +756,41 @@
       <div class="steps-grid">
         <div class="step-card fade-up">
           <div class="step-num">01</div>
-          <div class="step-title">Flash Core Partitions via Fastboot</div>
-          <div class="step-hint">Reboot to bootloader (<code style="color:var(--cyan)">adb reboot bootloader</code>) and execute:</div>
+          <div class="step-title">Enable Developer Options & Unlock Bootloader</div>
+          <div class="step-hint">On device: Go to <strong>Settings → About Phone</strong>, tap <strong>Build Number 7 times</strong> to unlock Developer Options. Then go to <strong>Developer Options</strong> and enable <strong>OEM Unlocking</strong>.</div>
+          <div class="code-block">
+            <button class="code-copy" onclick="copyCode(this)">Copy</button>
+<span class="code-comment"># Connect device via USB, then on PC:</span>
+<span class="code-green">adb</span> reboot bootloader
+
+<span class="code-comment"># Once in bootloader, unlock OEM:</span>
+<span class="code-green">fastboot</span> oem unlock
+
+<span class="code-comment"># Or for newer devices:</span>
+<span class="code-green">fastboot</span> flashing unlock</div>
+        </div>
+
+        <div class="step-card fade-up">
+          <div class="step-num">02</div>
+          <div class="step-title">Flash All Partitions via Fastboot</div>
+          <div class="step-hint">Still in bootloader mode, flash all downloaded partition images one by one:</div>
           <div class="code-block">
             <button class="code-copy" onclick="copyCode(this)">Copy</button>
 <span class="code-green">fastboot</span> flash boot boot.img
 <span class="code-green">fastboot</span> flash vendor_boot vendor_boot.img
 <span class="code-green">fastboot</span> flash dtbo dtbo.img
-<span class="code-green">fastboot</span> flash vbmeta   --disable-verity --disable-verification   vbmeta.img
+<span class="code-green">fastboot</span> flash recovery recovery.img
+<span class="code-green">fastboot</span> flash vbmeta --disable-verity \
+  --disable-verification vbmeta.img
+<span class="code-green">fastboot</span> flash vbmeta_system --disable-verity \
+  --disable-verification vbmeta_system.img
+
+<span class="code-comment"># Now reboot into recovery:</span>
 <span class="code-green">fastboot</span> reboot recovery</div>
         </div>
 
         <div class="step-card fade-up">
-          <div class="step-num">02</div>
+          <div class="step-num">03</div>
           <div class="step-title">Format Data in Recovery</div>
           <div class="step-hint">In recovery: Select <strong>Factory Reset → Format Data/Factory Reset</strong> and confirm.</div>
           <div class="code-block">
@@ -781,7 +803,7 @@
         </div>
 
         <div class="step-card fade-up">
-          <div class="step-num">03</div>
+          <div class="step-num">04</div>
           <div class="step-title">Sideload ROM Package</div>
           <div class="step-hint">Select <strong>Apply update → Apply from ADB</strong> and run on host:</div>
           <div class="code-block">
@@ -844,7 +866,7 @@
           <div><span class="prop-key">ro.product.device:</span> <span class="prop-val">tank</span></div>
           <div><span class="prop-key">ro.product.model:</span> <span class="prop-val">Motorola Edge 50</span></div>
           <div><span class="prop-key">ro.infinity.version:</span> <span class="prop-val">4.0-BETA</span></div>
-          <div><span class="prop-key">ro.build.type:</span> <span class="prop-val">userdebug</span></div>
+          <div><span class="prop-key">ro.build.type:</span> <span class="prop-val">user</span></div>
           <div><span class="prop-key">ro.build.version.release:</span> <span class="prop-val">17</span></div>
           <div><span class="prop-key">ro.build.version.security_patch:</span> <span class="prop-val">2026-09-05</span></div>
           <div><span class="prop-key">ro.soc.manufacturer:</span> <span class="prop-val">Qualcomm SM7450-AB</span></div>
