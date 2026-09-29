@@ -588,10 +588,6 @@
   <main id="top">
 
     <div class="hero fade-up">
-      <div class="tomioka-badge">
-        <span class="kanji-tag">水の呼吸</span>
-        <span>WATER BREATHING ELEVENTH FORM: DEAD CALM • ANDROID 17</span>
-      </div>
       <h1 class="hero-title">
         Fluid & Lethal Android for
         <span class="gradient-text">Motorola Edge 50</span>
@@ -636,16 +632,6 @@
         <p>Calm as still water, fierce as a crashing wave.</p>
       </div>
       <div class="features-grid">
-        <div class="feature-card fade-up">
-          <div class="feature-icon">🌊</div>
-          <div class="feature-title">Eleventh Form: Dead Calm</div>
-          <div class="feature-desc">Zero frame drops or jitter. The system operates with tranquil latency and ultra-responsive touch sampling rates.</div>
-        </div>
-        <div class="feature-card fade-up">
-          <div class="feature-icon">🛡️</div>
-          <div class="feature-title">Play Integrity Validated</div>
-          <div class="feature-desc">Google Wallet, banking applications, and device biometrics pass integrity tests without third-party patches.</div>
-        </div>
         <div class="feature-card fade-up">
           <div class="feature-icon">🎨</div>
           <div class="feature-title">Limitless Theming</div>
@@ -1110,7 +1096,7 @@
     }
     animateWater();
 
-    const TELEMETRY_KEY = 'infinityx_tank_telemetry_v2';
+    const TELEMETRY_KEY = 'infinityx_tank_telemetry_v3';
 
     function getLocalTelemetry() {
       try {
@@ -1118,15 +1104,15 @@
         if (stored) return JSON.parse(stored);
       } catch (e) {}
       return {
-        visits: 218,
+        visits: 0,
         downloads: {
-          zip: 94,
-          boot: 58,
-          vendor_boot: 52,
-          dtbo: 43,
-          recovery: 76,
-          vbmeta: 47,
-          vbmeta_system: 41
+          zip: 0,
+          boot: 0,
+          vendor_boot: 0,
+          dtbo: 0,
+          recovery: 0,
+          vbmeta: 0,
+          vbmeta_system: 0
         }
       };
     }
