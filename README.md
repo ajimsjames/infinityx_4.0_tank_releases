@@ -6,7 +6,7 @@ Official release page for **Project Infinity-X 4.0** built for the Motorola Edge
 
 ## Download
 - 🔗 [SourceForge FRS](https://sourceforge.net/projects/infinityx-4-0-tank-releases/files/)
-- 🌐 [Release Website](https://ajimsjames.github.io/infinityx_4.0_tank-_releases/)
+- 🌐 [Release Website](https://ajimsjames.github.io/infinityx_4.0_tank_releases/)
 
 ## Files
 | File | Size |
@@ -19,10 +19,10 @@ Official release page for **Project Infinity-X 4.0** built for the Motorola Edge
 | vbmeta.img | 64 KB |
 
 ## Device
-- **Device**: Motorola Edge 30 Fusion
+- **Device**: Motorola Edge 50
 - **Codename**: tank
-- **Chipset**: Qualcomm Snapdragon 888+ 5G
-- **Android Version**: 15
+- **Chipset**: Qualcomm Snapdragon 7 Gen 1 AE (4 nm)
+- **Android Version**: 17
 
 ## Maintainer
 [@ajimsjames](https://github.com/ajimsjames)
